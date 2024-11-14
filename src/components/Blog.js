@@ -1,61 +1,27 @@
+// src/Components/Blog.js
+import React from 'react';
+import './Blog.css';
 
-import React from "react";
-import "./Blog.css";
+const destinations = [
+    { name: "Thailand", img: "path/to/thailand.jpg" },
+    { name: "China", img: "path/to/china.jpg" },
+    { name: "Switzerland", img: "path/to/switzerland.jpg" },
+    { name: "Australia", img: "path/to/australia.jpg" },
+    { name: "France", img: "path/to/france.jpg" },
+    { name: "Norway", img: "path/to/norway.jpg" },
+];
 
-
-
-const Blog = () => {
-  // Sample data for blog posts
-  const blogPosts = [
-    {
-      id: 1,
-      title: "Exploring the Wonders of Southeast Asia",
-      date: "November 5, 2024",
-      excerpt: "Discover the rich culture, breathtaking landscapes, and vibrant cities of Southeast Asia in our latest travel guide.",
-      image: "southeast_asia.jpg", // Replace with your actual image path
-      link: "/blog/southeast-asia",
-    },
-    {
-      id: 2,
-      title: "The Ultimate Travel Checklist",
-      date: "October 22, 2024",
-      excerpt: "Everything you need to pack, prepare, and remember before setting off on your next adventure.",
-      image: "travel_checklist.jpg", // Replace with your actual image path
-      link: "/blog/travel-checklist",
-    },
-    {
-      id: 3,
-      title: "Top Travel Apps to Use in 2024",
-      date: "October 10, 2024",
-      excerpt: "From maps to language tools, discover the top travel apps that will make your journey easier.",
-      image: "travel_apps.jpg", // Replace with your actual image path
-      link: "/blog/travel-apps-2024",
-    },
-  ];
-
-function Blog() {
-  return (
-<>
-<h1>This page for blog</h1>
-</>
-  )
-}
-    <div className="blog">
-      <h1>Tourism Blog</h1>
-      <p>Get the latest travel tips, guides, and destination inspiration.</p>
-      <div className="blog-list">
-        {blogPosts.map((post) => (
-          <div className="blog-post" key={post.id}>
-            <img src={post.image} alt={post.title} className="blog-image" />
-            <h2>{post.title}</h2>
-            <span className="blog-date">{post.date}</span>
-            <p>{post.excerpt}</p>
-            <a href={post.link} className="read-more">Read More &rarr;</a>
-          </div>
-        ))}
-      </div>
-    </div>
-
+const Destinations = () => {
+    return (
+        <div className="destinations">
+            {destinations.map((destination, index) => (
+                <div className="destination-card" key={index}>
+                    <img src={destination.img} alt={destination.name} />
+                    <h3>{destination.name}</h3>
+                </div>
+            ))}
+        </div>
+    );
 };
 
-export default Blog;
+export default Destinations;
